@@ -1,0 +1,49 @@
+<html>
+<head>
+<h1 style="text-align:center">Farm Plot Navigation</h1>
+</head>
+<body style="background-color:lightyellow">
+<nav>
+<table style="width:100%">
+<tr style="background-color:5C8038">
+<th><a href="index.html" style="color:white">Home<a></th>
+<th><a href="registration.html" style="color:white">Register<a></th>
+<th><a href="farm-info.html" style="color:white">Farm Dashboard<a></th>
+<th><a href="advisory.html" style="color:white">Irrigation Advisory<a></th>
+<th><a href="irrigation-table.html" style="color:white">Sensor Data<a></th>
+<th><a href="weather.html" style="color:white">Weather Forecast<a></th>
+<th><a href="contact.html" style="color:white">Contact<a></th>
+</tr>
+</table>
+</nav>
+<br>
+<a href="gallery.html" style="color:black">Gallery | <a>
+<a href="plot-map.html" style="color:black">Plot Map | <a>
+<a href="media.html" style="color:black">Media | <a>
+<hr>
+<br>
+
+<p align="center"><b>Click on Plot 101 (Left), Plot 102 (Middle), or Plot 103 (Right) on the map to view its details.</b></p>
+<p align="center">
+<img src="https://t4.ftcdn.net/jpg/01/98/72/81/360_F_198728135_G0iI1XhT1EiEJUcExdTywxpyvK9CIAwO.jpg" 
+alt="Farm Map" 
+usemap="#farmmap" 
+width="1200" 
+height="600">
+</p>
+<map name="farmmap">
+
+<area shape="rect" coords="0,0,400,600" alt="Plot 101" href="data:text/html,<h2>Plot 101 Details</h2><p><b>Sugarcane Variety:</b> Pundia</p><p><b>Irrigation:</b> Drip System</p><p><b>Area:</b> 5.2 Acres</p>" target="plotframe">
+
+<area shape="rect" coords="400,0,800,600" alt="Plot 102" href="data:text/html,<h2>Plot 102 Details</h2><p><b>Sugarcane Variety:</b> Kala Ganna</p><p><b>Irrigation:</b> Sprinkler System</p><p><b>Area:</b> 3.8 Acres</p>" target="plotframe">
+
+<area shape="rect" coords="800,0,1200,600" alt="Plot 103" href="data:text/html,<h2>Plot 103 Details</h2><p><b>Sugarcane Variety:</b> Gandheri </p> <p><b>Irrigation:</b> Micro-Drip</p><p><b>Area:</b> 2.5 Acres</p>" target="plotframe">
+</map>
+<br>
+<p align="center">
+<iframe name="plotframe" width="500" height="180" srcdoc="<p>Click a plot on the map above to display its details here.</p>"></iframe>
+</p>
+<footer>
+<hr>
+<p style="text-align:center">All copyrights are reserved by Tanb</p>
+</body>

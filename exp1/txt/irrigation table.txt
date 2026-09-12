@@ -1,0 +1,73 @@
+<html>
+<head>
+<h1 style="text-align:center">Irrigation Recommendations</h1>
+</head>
+<body style="background-color:CCE1CE">
+<nav>
+<table style="width:100%">
+<tr style="background-color:5C8038">
+<th><a href="index.html" style="color:white">Home<a></th>
+<th><a href="registration.html" style="color:white">Register<a></th>
+<th><a href="farm-info.html" style="color:white">Farm Dashboard<a></th>
+<th><a href="advisory.html" style="color:white">Irrigation Advisory<a></th>
+<th><a href="irrigation-table.html" style="color:white">Sensor Data<a></th>
+<th><a href="weather.html" style="color:white">Weather Forecast<a></th>
+<th><a href="contact.html" style="color:white">Contact<a></th>
+</tr>
+</table>
+</nav>
+<br>
+<a href="gallery.html" style="color:black">Gallery | <a>
+<a href="plot-map.html" style="color:black">Plot Map | <a>
+<a href="media.html" style="color:black">Media | <a>
+<hr>
+<center>
+<table style="width:80%" cellpadding ="10" border="1" cellspacing="0">
+<thead>
+<tr>
+<th>Plot ID</th>
+<th>Farmer Name</th>
+<th>Soil Moisture (%)</th>
+<th>Weather</th>
+<th>Irrigation Recommendation</th>
+<th>Water Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SC-204</td>
+<td rowspan="2">Ravi Kumar</td>
+<td>15%</td>
+<td>Sunny</td>
+<td>Heavy Irrigation</td>
+<td>1000 L</td>
+</tr>
+<tr>
+<td>SC-210</td>
+<td>40%</td>
+<td>Cloudy</td>
+<td>Normal Irrigation</td>
+<td>500 L</td>
+</tr>
+<tr>
+<td>SC-220</td>
+<td>Suresh Singh</td>
+<td>80%</td>
+<td>Rainy</td>
+<td>No Irrigation</td>
+<td>0 L</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td colspan="5" style="text-align:center">Total Water:</td>
+<td>1500 L</td>
+</tr>
+</tfoot>
+</table>
+</center>
+<footer>
+<hr>
+<p>All copyrights are reserved by KIKI</p>
+</body>
+</html>

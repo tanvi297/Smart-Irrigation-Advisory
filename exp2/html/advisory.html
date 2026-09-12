@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Irrigation Advisory</title>
+  
+  <style>
+    /* CSS Keyframe Animation for Pulsing/Glowing Effect */
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 5px rgba(217, 83, 79, 0.4);
+        border-color: #d9534f;
+      }
+      50% {
+        box-shadow: 0 0 18px rgba(217, 83, 79, 0.9), 0 0 8px rgba(255, 193, 7, 0.8);
+        border-color: #ff9800;
+      }
+      100% {
+        box-shadow: 0 0 5px rgba(217, 83, 79, 0.4);
+        border-color: #d9534f;
+      }
+    }
+
+    /* Highlight Container for Critical Data */
+    .highlight-box {
+      display: inline-block;
+      background-color: #fff3cd;     /* Alert background color */
+      border: 2px solid #d9534f;
+      border-radius: 8px;
+      padding: 6px 14px;
+      margin: 4px 0;
+      font-size: 1.15rem;           /* Bigger font size */
+      font-weight: bold;
+      color: #856404;
+      
+      /* Animation, Box Shadow & Text Shadow */
+      animation: pulseGlow 2s infinite;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    /* Interactive Hover Effect */
+    .highlight-box:hover {
+      transform: scale(1.03);
+      background-color: #ffe8a1;
+      cursor: pointer;
+    }
+
+    /* Styling inner critical values */
+    .highlight-box mark {
+      background-color: #d9534f;
+      color: #ffffff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .highlight-box .stress-level {
+      color: #c0392b;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body style="background-color: lightyellow;">
+
+  <h1 style="text-align: center;">Daily Irrigation Advisory</h1>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <table style="width: 100%;">
+      <tr style="background-color: #5C8038;">
+        <th><a href="index.html" style="color: white;">Home</a></th>
+        <th><a href="registration.html" style="color: white;">Register</a></th>
+        <th><a href="farm-info.html" style="color: white;">Farm Dashboard</a></th>
+        <th><a href="advisory.html" style="color: white;">Irrigation Advisory</a></th>
+        <th><a href="irrigation-table.html" style="color: white;">Sensor Data</a></th>
+        <th><a href="weather.html" style="color: white;">Weather Forecast</a></th>
+        <th><a href="contact.html" style="color: white;">Contact</a></th>
+      </tr>
+    </table>
+  </nav>
+
+  <br>
+  <a href="gallery.html" style="color: black;">Gallery | </a>
+  <a href="plot-map.html" style="color: black;">Plot Map | </a>
+  <a href="media.html" style="color: black;">Media | </a>
+  <hr>
+
+  <p style="text-align: center;"><em>Target Crop: Sugarcane Field</em></p>
+  <h1>Advisory Summary</h1>
+
+  <!-- Advisory Record 1 -->
+  <p>
+    <strong>Plot ID:</strong> SC-204<br>
+    <strong>Farmer Name:</strong> Ravi Kumar<br>
+    <strong>Soil Moisture:</strong> 15% (Low)<br>
+    <span class="highlight-box">
+      <strong>Recommended Irrigation Duration:</strong> <mark>3.5 Hours</mark>
+    </span><br>
+    <span class="highlight-box">
+      <strong>Water Stress Level:</strong> <em class="stress-level">High Stress</em>
+    </span>
+  </p>
+  <hr>
+
+  <!-- Advisory Record 2 -->
+  <p>
+    <strong>Plot ID:</strong> 101<br>
+    <strong>Farmer Name:</strong> Ravi Kishan<br>
+    <strong>Soil Moisture:</strong> 40% (Medium)<br>
+    <span class="highlight-box">
+      <strong>Recommended Irrigation Duration:</strong> <mark>1.5 Hours</mark>
+    </span><br>
+    <span class="highlight-box">
+      <strong>Water Stress Level:</strong> <em class="stress-level">Low Stress</em>
+    </span>
+  </p>
+  <hr>
+
+  <!-- Advisory Record 3 -->
+  <p>
+    <strong>Plot ID:</strong> 102<br>
+    <strong>Farmer Name:</strong> Suresh Singh<br>
+    <strong>Soil Moisture:</strong> 80% (High)<br>
+    <span class="highlight-box">
+      <strong>Recommended Irrigation Duration:</strong> <mark>0 Hours</mark>
+    </span><br>
+    <span class="highlight-box">
+      <strong>Water Stress Level:</strong> <em class="stress-level">No Stress</em>
+    </span>
+  </p>
+
+  <p>
+    <small>* Note: Advisory generated based on morning soil sensor telemetry.</small>
+  </p>
+
+  <footer>
+    <hr>
+    <p style="text-align: center;">All copyrights are reserved by Tanb</p>
+  </footer>
+
+</body>
+</html>

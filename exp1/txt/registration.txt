@@ -1,0 +1,81 @@
+<html>
+<head>
+<h1 style="text-align:center"> Registration Page </h1>
+</head>
+<body style="background-color:CCE1CE">
+<nav>
+<table style="width:100%">
+<tr style="background-color:5C8038">
+<th><a href="index.html" style="color:white">Home<a></th>
+<th><a href="registration.html" style="color:white">Register<a></th>
+<th><a href="farm-info.html" style="color:white">Farm Dashboard<a></th>
+<th><a href="advisory.html" style="color:white">Irrigation Advisory<a></th>
+<th><a href="irrigation-table.html" style="color:white">Sensor Data<a></th>
+<th><a href="weather.html" style="color:white">Weather Forecast<a></th>
+<th><a href="contact.html" style="color:white">Contact<a></th>
+</tr>
+</table>
+</nav>
+<br>
+<a href="gallery.html" style="color:black">Gallery | <a>
+<a href="plot-map.html" style="color:black">Plot Map | <a>
+<a href="media.html" style="color:black">Media | <a>
+<hr>
+<br>
+<center>
+<h2><b>Farmer Registration Form</b></h2>
+<form>
+<fieldset style="width:400px">
+<br>
+<label for="name">Name:</label><br>
+<input type="text" id="name" name="name" placeholder="Enter your full name" required autofocus>
+<br>
+<br>
+<label for="mobile">Mobile Number:</label><br>
+<input type="tel" id="mobile" name="mobile" placeholder="10 digit mobile number" pattern="[0-9]{10}" required>
+<br>
+<br>
+<label for="email">Email:</label><br>
+<input type="email" id="email" name="email" placeholder="Enter email address" required>
+<br>
+<br>
+<label for="plotid">Plot ID:</label><br>
+<input type="text" id="plotid" name="plotid" placeholder="e.g. PLOT123" pattern="[A-Z0-9]+" required>
+<br>
+<br>
+<label for="village">Village:</label><br>
+<input type="text" id="village" name="village" placeholder="Enter village name" required>
+<br>
+<br>
+<label for="cropstage">Crop Stage:</label><br>
+<input type="text" id="cropstage" name="cropstage" placeholder="e.g. Sowing, Flowering" required>
+<br>
+<br>
+<label for="soiltype">Soil Type:</label><br>
+<input type="text" id="soiltype" name="soiltype" placeholder="e.g. Clay, Red, Black" required>
+<br>
+<br>
+<label for="method">Irrigation Method:</label><br>
+<input type="text" id="method" name="method" placeholder="e.g. Drip, Sprinkler" required>
+<br>
+<br>
+<label for="date">Date:</label><br>
+<input type="date" id="date" name="date" required>
+<br>
+<br>
+<label for="photo">Farm Photo:</label><br>
+<input type="file" id="photo" name="photo" required>
+<br>
+<br>
+<input type="submit" value="Register">
+<input type="reset" value="Reset">
+</fieldset>
+</form>
+</center>
+<br>
+<footer>
+<hr>
+<p>All copyrights are reserved by KIKI</p>
+</footer>
+</body>
+</html>

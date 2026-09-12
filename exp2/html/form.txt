@@ -1,0 +1,98 @@
+/* Container and Fieldset Styling */
+fieldset {
+  width: 450px;
+  margin: 20px auto;
+  padding: 25px 30px;
+  border: 2px solid #5C8038;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #5C8038;
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+
+/* Form Labels */
+label {
+  font-weight: bold;
+  color: #333333;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+/* Input Fields Width & Padding */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 4px;
+  margin-bottom: 18px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  box-sizing: border-box; /* Ensures padding doesn't break width */
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus State Pseudo-Class */
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="file"]:focus {
+  border-color: #5C8038;
+  box-shadow: 0 0 6px rgba(92, 128, 56, 0.4);
+  outline: none;
+}
+
+/* Buttons Styling */
+input[type="submit"],
+input[type="reset"] {
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* Submit Button */
+input[type="submit"] {
+  background-color: #5C8038;
+  color: #ffffff;
+}
+
+/* Submit Hover Effect */
+input[type="submit"]:hover {
+  background-color: #435e29;
+}
+
+/* Reset Button */
+input[type="reset"] {
+  background-color: #e0e0e0;
+  color: #333333;
+}
+
+/* Reset Hover Effect */
+input[type="reset"]:hover {
+  background-color: #c8c8c8;
+}
+
+/* Active Click Effect */
+input[type="submit"]:active,
+input[type="reset"]:active {
+  transform: scale(0.98);
+}

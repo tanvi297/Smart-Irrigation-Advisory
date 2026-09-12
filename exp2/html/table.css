@@ -1,0 +1,47 @@
+// styling table
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+
+.styled-table {
+  width: 80%;
+  border-collapse: collapse; 
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+
+.styled-table th, 
+.styled-table td {
+  border: 1px solid #cccccc;
+  padding: 12px 15px;
+  text-align: center;         
+}
+
+
+.styled-table thead tr {
+  background-color: #5C8038;  
+  color: #ffffff;
+  font-weight: bold;
+}
+
+
+.styled-table tbody tr:nth-child(even) {
+  background-color: #f2f7ed;  /* Light contrasting tint for alternating rows */
+}
+
+
+.styled-table tbody tr:hover {
+  background-color: #e2ebd8;
+}
+
+
+.styled-table tfoot tr {
+  font-weight: bold;
+  background-color: #e9ecef;
+}

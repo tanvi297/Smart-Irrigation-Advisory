@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Growth Stages</title>
+    <style>
+        /* Navigation Menu Styling using Internal CSS */
+        nav ul {
+            list-style-type: none; /* Removes bullet points */
+            margin: 0;
+            padding: 0;
+            background-color: #1F4D2C;
+            overflow: hidden;
+        }
+
+        nav li {
+            display: inline-block; /* Displays menu items horizontally */
+        }
+
+        nav li a {
+            display: inline-block; /* Allows padding and dimensions on links */
+            color: white; /* Changes link color */
+            text-decoration: none; /* Removes underline from links */
+            padding: 14px 20px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        /* Hover effect using pseudo-class */
+        nav li a:hover {
+            background-color: #5C8038;
+            color: #lightyellow;
+        }
+    </style>
+</head>
+<body style="background-color: lightyellow;">
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#tillering">Tillering</a></li>
+            <li><a href="#growth">Grand Growth</a></li>
+            <li><a href="#maturity">Maturity</a></li>
+        </ul>
+    </nav>
+
+    <br>
+
+    <!-- Crop Growth Stages Content -->
+    <dl>
+        <dt><h3>Tillering</h3>
+            <img src="https://i.ytimg.com/vi/09wk7vgoxxU/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGF4gZSg2MA8=&rs=AOn4CLDGuKytA4XWnnWXhLRfJxaTHTrTZA" alt="Tillering" width="300">
+        </dt>
+        <dd>The plant grows extra stems.</dd>
+
+        <dt><h3>Grand Growth</h3>
+            <img src="https://agritech.tnau.ac.in/agriculture/CropProduction/Sugarcrops/sugarcrops_sugarcane_clip_image006_0002.jpg" alt="Tillering" width="300">
+        </dt>
+        <dd><mark>Rapid growth</mark> before flowering.</dd>
+
+        <dt><h3>Maturity</h3></dt>
+        <dd>Crop is ready for harvest.</dd>
+    </dl>
+
+    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400" alt="Crop Field" width="300">
+
+    <footer>
+        <hr>
+        <p style="text-align: center;">All copyrights are reserved by Tanb</p>
+    </footer>
+
+</body>
+</html>
