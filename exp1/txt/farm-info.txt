@@ -6,7 +6,7 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
-      background-color: #333; /* Dark background for professional look */
+      background-color: #639991; /* Dark background for professional look */
     }
  </style>
 <h1 style="text-align:center">Farm Dashoard</h2>
