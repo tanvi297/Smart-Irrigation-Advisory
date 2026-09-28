@@ -1,0 +1,164 @@
+<html>
+<head>
+<h1 style="text-align:center"> Registration Page </h1>
+
+<link rel="stylesheet" href="form.css">
+
+<!-- nav bar CSS -->
+  <style>
+    
+    nav ul {
+      list-style-type: none; 
+      margin: 0;
+      padding: 0;
+      background-color: #5C8038;
+      text-align: center;
+    }
+
+   
+    nav ul li {
+      display: inline-block;
+    }
+
+    
+    nav ul li a {
+      display: inline-block;
+      color: white;              
+      text-decoration: none;    
+      padding: 12px 16px;
+      font-weight: bold;
+    }
+
+    
+    nav ul li a:hover {
+      background-color: #3e5824;
+      color: lightyellow;       
+      text-decoration: underline; 
+    }
+  </style>
+
+  <script>
+    function calculateIrrigation(event) {
+      
+      event.preventDefault();
+
+      
+      var farmerName = document.getElementById("name").value;
+      var plotID = document.getElementById("plotid").value;
+      var currentSoilMoisture = parseFloat(document.getElementById("moisture").value);
+      var requiredSoilMoisture = parseFloat(document.getElementById("req_moisture").value);
+
+      
+      var moistureDeficit = requiredSoilMoisture - currentSoilMoisture;
+      var statusMessage = "";
+
+      if (moistureDeficit > 0) {
+        statusMessage = "Irrigation Needed! Water Required Deficit: " + moistureDeficit + "%";
+      } else {
+        statusMessage = "Sufficient Soil Moisture. No Irrigation Required. Surplus/Balance: " + Math.abs(moistureDeficit) + "%";
+      }
+
+      
+      alert("Farmer: " + farmerName + "\nPlot ID: " + plotID + "\nStatus: " + statusMessage);
+
+      
+      document.write("<h2 style='text-align:center; font-family:Arial;'>Irrigation Status Report</h2>");
+      document.write("<hr><div style='font-size:18px; text-align:center;'>");
+      document.write("<p><b>Farmer Name:</b> " + farmerName + "</p>");
+      document.write("<p><b>Plot ID:</b> " + plotID + "</p>");
+      document.write("<p><b>Current Soil Moisture:</b> " + currentSoilMoisture + "%</p>");
+      document.write("<p><b>Required Soil Moisture:</b> " + requiredSoilMoisture + "%</p>");
+      document.write("<p><b>Moisture Deficit:</b> " + moistureDeficit + "%</p>");
+      document.write("<p><b>Status:</b> " + statusMessage + "</p>");
+      document.write("<br><a href=''>Go Back to Registration Form</a></div>");
+    }
+  </script>
+
+</head>
+<body style="background-color:lightyellow">
+<nav>
+<table style="width:100%">
+<tr style="background-color:5C8038">
+<th><a href="index.html" style="color:white">Home<a></th>
+<th><a href="registration.html" style="color:white">Register<a></th>
+<th><a href="farm-info.html" style="color:white">Farm Dashboard<a></th>
+<th><a href="advisory.html" style="color:white">Irrigation Advisory<a></th>
+<th><a href="irrigation-table.html" style="color:white">Sensor Data<a></th>
+<th><a href="weather.html" style="color:white">Weather Forecast<a></th>
+<th><a href="contact.html" style="color:white">Contact<a></th>
+<th><a href="gallery.html" style="color:white">Gallery<a> </th>
+<th> <a href="plot-map.html" style="color:white">Plot Map <a> </th>
+<th><a href="media.html" style="color:white">Media <a> </th>
+</tr>
+</table>
+</nav>
+<br>
+
+<hr>
+<br>
+<center>
+<h2><b>Farmer Registration Form</b></h2>
+<form onsubmit="calculateIrrigation(event)">
+<fieldset style="width:400px">
+<br>
+<label for="name">Name(*):</label><br>
+<input type="text" id="name" name="name" placeholder="Enter your full name" required autofocus>
+<br>
+<br>
+<label for="mobile">Mobile Number (*):</label><br>
+<input type="tel" id="mobile" name="mobile" placeholder="10 digit mobile number" pattern="[0-9]{10}" required>
+<br>
+<br>
+<label for="email">Email (*):</label><br>
+<input type="email" id="email" name="email" placeholder="Enter email address" required>
+<br>
+<br>
+<label for="plotid">Plot ID(*):</label><br>
+<input type="text" id="plotid" name="plotid" placeholder="e.g. PLOT123" pattern="[A-Z0-9]+" required>
+<br>
+<br>
+<label for="village">Village(*):</label><br>
+<input type="text" id="village" name="village" placeholder="Enter village name" required>
+<br>
+<br>
+<label for="cropstage">Crop Stage(*):</label><br>
+<input type="text" id="cropstage" name="cropstage" placeholder="e.g. Sowing, Flowering" required>
+<br>
+<br>
+<label for="soiltype">Soil Type(*):</label><br>
+<input type="text" id="soiltype" name="soiltype" placeholder="e.g. Clay, Red, Black" required>
+<br>
+<br>
+<label for="method">Irrigation Method (*):</label><br>
+<input type="text" id="method" name="method" placeholder="e.g. Drip, Sprinkler" required>
+<br>
+<br>
+
+<label for="moisture"> Current Soil Moisture(%) (*): </label> <br>
+<input type="number" id="moisture" name="moisture" placeholder="e.g. 50, 60, 70" required>
+<br>
+<br> 
+<label for="req_moisture"> Required Soil Moisture(%) (*): </label> <br>
+<input type="number" id="req_moisture" name="req_moisture" placeholder="e.g. 70, 80" required>
+<br>
+<br> 
+<label for="date">Date (*):</label><br>
+<input type="date" id="date" name="date" required>
+<br>
+<br>
+<label for="photo">Farm Photo(*):</label><br>
+<input type="file" id="photo" name="photo" required>
+<br>
+<br>
+<input type="submit" value="Register">
+<input type="reset" value="Reset">
+</fieldset>
+</form>
+</center>
+<br>
+<footer>
+<hr>
+<p style="text-align: center">All copyrights are reserved by Tanb </p>
+</footer>
+</body>
+</html>
