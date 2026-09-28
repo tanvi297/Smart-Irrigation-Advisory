@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Irrigation Advisory</title>
+  
+  <style>
+    /* pulsing/glowing effect*/
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 5px rgba(217, 83, 79, 0.4);
+        border-color: #d9534f;
+      }
+      50% {
+        box-shadow: 0 0 18px rgba(217, 83, 79, 0.9), 0 0 8px rgba(255, 193, 7, 0.8);
+        border-color: #ff9800;
+      }
+      100% {
+        box-shadow: 0 0 5px rgba(217, 83, 79, 0.4);
+        border-color: #d9534f;
+      }
+    }
+
+    /*highlight container*/
+    .highlight-box {
+      display: inline-block;
+      background-color: #fff3cd;     /* Alert background color */
+      border: 2px solid #d9534f;
+      border-radius: 8px;
+      padding: 6px 14px;
+      margin: 4px 0;
+      font-size: 1.15rem;           
+      font-weight: bold;
+      color: #856404;
+      
+      /* animation, box shadow and text shadow */
+      animation: pulseGlow 2s infinite;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    /* hover effect*/
+    .highlight-box:hover {
+      transform: scale(1.03);
+      background-color: #ffe8a1;
+      cursor: pointer;
+    }
+
+    /* text inside the critical box */
+    .highlight-box mark {
+      background-color: #d9534f;
+      color: #ffffff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .highlight-box .stress-level {
+      color: #c0392b;
+      text-decoration: underline;
+    }
+
+    /* js object output box */
+    #farm-info-card {
+      background-color: #ffffff;
+      border: 2px solid #5C8038;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 500px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body style="background-color: lightyellow;">
+
+  <h1 style="text-align: center;">Daily Irrigation Advisory</h1>
+
+  <!--nav bar -->
+  <nav>
+    <table style="width: 100%;">
+      <tr style="background-color: #5C8038;">
+        <th><a href="index.html" style="color: white;">Home</a></th>
+        <th><a href="registration.html" style="color: white;">Register</a></th>
+        <th><a href="farm-info.html" style="color: white;">Farm Dashboard</a></th>
+        <th><a href="advisory.html" style="color: white;">Irrigation Advisory</a></th>
+        <th><a href="irrigation-table.html" style="color: white;">Sensor Data</a></th>
+        <th><a href="weather.html" style="color: white;">Weather Forecast</a></th>
+        <th><a href="contact.html" style="color: white;">Contact</a>
+  <th> <a href="gallery.html" style="color: white;">Gallery </a> </th>
+ <th> <a href="plot-map.html" style="color: white;">Plot Map </a> </th>
+ <th> <a href="media.html" style="color: white;">Media</a></th> </th>
+      </tr>
+    </table>
+  </nav>
+
+  <br>
+
+  <hr>
+
+  <p style="text-align: center;"><em>Target Crop: Sugarcane Field</em></p>
+  <h1>Advisory Summary</h1>
+
+  <!-- Record 1 -->
+  <p>
+    <strong>Plot ID:</strong> 101<br>
+    <strong>Farmer Name:</strong> Ravi Kumar<br>
+    <strong>Soil Moisture:</strong> 15% (Low)<br>
+    <span class="highlight-box">
+      <strong>Recommended Irrigation Duration:</strong> <mark>3.5 Hours</mark>
+    </span><br>
+    <span class="highlight-box">
+      <strong>Water Stress Level:</strong> <em class="stress-level">High Stress</em>
+    </span>
+  </p>
+  <hr>
+
+  <!--Record 2 -->
+  <p>
+    <strong>Plot ID:</strong> 102<br>
+    <strong>Farmer Name:</strong> Ravi Kishan<br>
+    <strong>Soil Moisture:</strong> 40% (Medium)<br>
+    <span class="highlight-box">
+      <strong>Recommended Irrigation Duration:</strong> <mark>1.5 Hours</mark>
+    </span><br>
+    <span class="highlight-box">
+      <strong>Water Stress Level:</strong> <em class="stress-level">Low Stress</em>
+    </span>
+  </p>
+  <hr>
+
+  <!-- Record 3 -->
+  <p>
+    <strong>Plot ID:</strong> 103<br>
+    <strong>Farmer Name:</strong> Suresh Singh<br>
+    <strong>Soil Moisture:</strong> 80% (High)<br>
+    <span class="highlight-box">
+      <strong>Recommended Irrigation Duration:</strong> <mark>0 Hours</mark>
+    </span><br>
+    <span class="highlight-box">
+      <strong>Water Stress Level:</strong> <em class="stress-level">No Stress</em>
+    </span>
+  </p>
+
+  <p>
+    <small>* Note: Advisory generated based on morning soil sensor telemetry.</small>
+  </p>
+
+  <!-- container where JS will output object data -->
+  <div id="farm-info-card"></div>
+
+  <footer>
+    <hr>
+    <p style="text-align: center;">All copyrights are reserved by Tanb</p>
+  </footer>
+
+  <!-- js Object Implementation -->
+  <script>
+    const sugarcaneFarm = {
+      farmerName: "Ravi Kumar",
+      plotID: "101",
+      cropStage: "Sowing",
+      soilMoisture: "15%",
+      area: "5 Acres",
+      pumpStatus: "OFF",
+
+      displayInfo: function() {
+        /*output to developer console */
+        console.log("Sugarcane Farm Details");
+        console.log("Farmer Name: " + this.farmerName);
+        console.log("Plot ID: " + this.plotID);
+        console.log("Crop Stage: " + this.cropStage);
+        console.log("Soil Moisture: " + this.soilMoisture);
+        console.log("Area: " + this.area);
+        console.log("Pump Status: " + this.pumpStatus);
+
+        /* this will be displyed on the web page */
+        const outputCard = document.getElementById("farm-info-card");
+        if (outputCard) {
+          outputCard.innerHTML = `
+            <h2 style="margin-top: 0; color: #5C8038;">Sugarcane Farm Details</h2>
+            <p><strong>Farmer Name:</strong> ${this.farmerName}</p>
+            <p><strong>Plot ID:</strong> ${this.plotID}</p>
+            <p><strong>Crop Stage:</strong> ${this.cropStage}</p>
+            <p><strong>Soil Moisture:</strong> ${this.soilMoisture}</p>
+            <p><strong>Area:</strong> ${this.area}</p>
+            <p><strong>Pump Status:</strong> ${this.pumpStatus}</p>
+          `;
+        }
+      }
+    };
+
+    /*Executing display method */
+    sugarcaneFarm.displayInfo();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Irrigation Recommendations</title>
+</head>
+
+<body style="background-color: lightyellow;">
+
+  <h1 style="text-align:center;">Irrigation Recommendations</h1>
+
+  <nav>
+    <table style="width:100%;">
+      <tr style="background-color: #5C8038;">
+        <th><a href="index.html" style="color:white;">Home</a></th>
+        <th><a href="registration.html" style="color:white;">Register</a></th>
+        <th><a href="farm-info.html" style="color:white;">Farm Dashboard</a></th>
+        <th><a href="advisory.html" style="color:white;">Irrigation Advisory</a></th>
+        <th><a href="irrigation-table.html" style="color:white;">Sensor Data</a></th>
+        <th><a href="weather.html" style="color:white;">Weather Forecast</a></th>
+        <th><a href="contact.html" style="color:white;">Contact</a></th>
+        <th><a href="gallery.html" style="color:white;">Gallery</a></th>
+        <th><a href="plot-map.html" style="color:white;">Plot Map</a></th>
+        <th><a href="media.html" style="color:white;">Media</a></th>
+      </tr>
+    </table>
+  </nav>
+
+  <br>
+  <hr>
+
+  <center>
+    <table style="width:80%;" cellpadding="10" border="1" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Plot ID</th>
+          <th>Farmer Name</th>
+          <th>Soil Moisture (%)</th>
+          <th>Weather</th>
+          <th>Irrigation Recommendation</th>
+          <th>Water Requirement</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>101</td>
+          <td>Ravi Kishan</td>
+          <td>15%</td>
+          <td>Sunny</td>
+          <td style="color:red;">Heavy Irrigation</td>
+          <td>1000 L</td>
+        </tr>
+        <tr>
+          <td>102</td>
+          <td>Gurpreet Kaur</td>
+          <td>40%</td>
+          <td>Cloudy</td>
+          <td style="color: orange;">Normal Irrigation</td>
+          <td>500 L</td>
+        </tr>
+        <tr>
+          <td>103</td>
+          <td>Suresh Singh</td>
+          <td>80%</td>
+          <td>Rainy</td>
+          <td style="color:green;">No Irrigation</td>
+          <td>0 L</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="5" style="text-align:center;"><b>Total Water:</b></td>
+          <td>1500 L</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <br>
+
+    <!-- Interactive Buttons -->
+    <button onclick="sugarcane_farm.displayDetails()">Show Farm Details</button>
+    <button onclick="sugarcane_farm.analyzeSensorData()">Analyze Sensor Data</button>
+
+    <!-- Output Box -->
+    <pre id="output" style="text-align: left; background-color: #ffffff; width: 60%; padding: 15px; border: 1px solid #ccc; margin-top: 15px;"></pre>
+  </center>
+
+  <script>
+    const sugarcane_farm = {
+      farmerName: 'Ravi',
+      plotID: 101,
+      cropStage: 'Sowing',
+      soilMoisture: '15%(low)',
+      Area: 50000,
+      pumpStatus: 'Frequent short cycles: ON',
+      
+      // Hourly soil moisture sensor readings (%)
+      sensorReadings: [15, 40, 80, 22, 18, 10, 35],
+      criticalValue: 20, // Threshold percentage for low moisture
+
+      displayDetails: function() {
+        let displayText = "=== Farm Details ===\n";
+        for (let key in this) {
+          if (typeof this[key] === 'function') continue;
+          let value = this[key];
+          if (Array.isArray(value)) value = value.join(", ");
+          else if (typeof value === 'object') value = JSON.stringify(value);
+          
+          displayText += `${key}: ${value}\n`;
+        }
+        document.getElementById("output").textContent = displayText;
+      },
+
+      analyzeSensorData: function() {
+        const readings = this.sensorReadings;
+        
+        // 1. Display all sensor readings
+        const allReadings = readings.join("% , ") + "%";
+
+        // 2. Minimum moisture level
+        const minMoisture = Math.min(...readings);
+
+        // 3. Maximum moisture level
+        const maxMoisture = Math.max(...readings);
+
+        // 4. Calculate average soil moisture
+        const sum = readings.reduce((acc, curr) => acc + curr, 0);
+        const avgMoisture = (sum / readings.length).toFixed(2);
+
+        // 5. Count number of readings below critical value (< 20%)
+        const belowCriticalCount = readings.filter(val => val < this.criticalValue).length;
+
+        // Construct Output Display
+        let report = "=== Soil Moisture Sensor Analysis ===\n";
+        report += `1. All Sensor Readings: ${allReadings}\n`;
+        report += `2. Minimum Moisture Level: ${minMoisture}%\n`;
+        report += `3. Maximum Moisture Level: ${maxMoisture}%\n`;
+        report += `4. Average Soil Moisture: ${avgMoisture}%\n`;
+        report += `5. Readings Below Critical Threshold (${this.criticalValue}%): ${belowCriticalCount}\n`;
+
+        document.getElementById("output").textContent = report;
+      }
+    };
+  </script>
+
+  <footer>
+    <hr>
+    <p style="text-align: center;">All copyrights are reserved by Tanb</p>
+  </footer>
+
+</body>
+</html>

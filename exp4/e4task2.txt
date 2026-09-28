@@ -1,0 +1,187 @@
+<html>
+<head>
+<h1 style="text-align:center"> Registration Page </h1>
+
+<link rel="stylesheet" href="form.css">
+
+<!-- nav bar CSS -->
+  <style>
+    
+    nav ul {
+      list-style-type: none; 
+      margin: 0;
+      padding: 0;
+      background-color: #5C8038;
+      text-align: center;
+    }
+
+   
+    nav ul li {
+      display: inline-block;
+    }
+
+    
+    nav ul li a {
+      display: inline-block;
+      color: white;              
+      text-decoration: none;    
+      padding: 12px 16px;
+      font-weight: bold;
+    }
+
+    
+    nav ul li a:hover {
+      background-color: #3e5824;
+      color: lightyellow;       
+      text-decoration: underline; 
+    }
+
+    /* Style for error messages */
+    .error-msg {
+      color: red;
+      font-size: 13px;
+      margin-left: 5px;
+    }
+  </style>
+
+</head>
+<body style="background-color:lightyellow">
+<nav>
+<table style="width:100%">
+<tr style="background-color:5C8038">
+<th><a href="index.html" style="color:white">Home</a></th>
+<th><a href="registration.html" style="color:white">Register</a></th>
+<th><a href="farm-info.html" style="color:white">Farm Dashboard</a></th>
+<th><a href="advisory.html" style="color:white">Irrigation Advisory</a></th>
+<th><a href="irrigation-table.html" style="color:white">Sensor Data</a></th>
+<th><a href="weather.html" style="color:white">Weather Forecast</a></th>
+<th><a href="contact.html" style="color:white">Contact</a></th>
+<th><a href="gallery.html" style="color:white">Gallery</a> </th>
+<th> <a href="plot-map.html" style="color:white">Plot Map </a> </th>
+<th><a href="media.html" style="color:white">Media </a> </th>
+</tr>
+</table>
+</nav>
+<br>
+
+<hr>
+<br>
+<center>
+<h2><b>Farmer Registration Form</b></h2>
+<form id="registrationForm" onsubmit="return validateForm()" novalidate>
+<fieldset style="width:400px">
+<br>
+<label for="name">Name:</label><br>
+<input type="text" id="name" name="name" placeholder="Enter your full name" autofocus>
+<span id="nameError" class="error-msg"></span>
+<br>
+<br>
+<label for="mobile">Mobile Number:</label><br>
+<input type="tel" id="mobile" name="mobile" placeholder="10 digit mobile number" pattern="[0-9]{10}" required>
+<br>
+<br>
+<label for="email">Email:</label><br>
+<input type="email" id="email" name="email" placeholder="Enter email address" required>
+<br>
+<br>
+<label for="plotid">Plot ID:</label><br>
+<input type="text" id="plotid" name="plotid" placeholder="e.g. PLOT123" pattern="[A-Z0-9]+">
+<span id="plotidError" class="error-msg"></span>
+<br>
+<br>
+<label for="village">Village:</label><br>
+<input type="text" id="village" name="village" placeholder="Enter village name">
+<span id="villageError" class="error-msg"></span>
+<br>
+<br>
+<label for="cropstage">Crop Stage:</label><br>
+<input type="text" id="cropstage" name="cropstage" placeholder="e.g. Sowing, Flowering" required>
+<br>
+<br>
+<label for="soiltype">Soil Type:</label><br>
+<input type="text" id="soiltype" name="soiltype" placeholder="e.g. Clay, Red, Black" required>
+<br>
+<br>
+<label for="method">Irrigation Method:</label><br>
+<input type="text" id="method" name="method" placeholder="e.g. Drip, Sprinkler" required>
+<br>
+<br>
+
+<label for="moisture"> Soil Moisture(%): </label> <br>
+<input type="number" id="moisture" name="moisture" placeholder="e.g. 50, 60, 70" required>
+<br>
+<br> 
+<label for="date">Date:</label><br>
+<input type="date" id="date" name="date" required>
+<br>
+<br>
+<label for="photo">Farm Photo:</label><br>
+<input type="file" id="photo" name="photo" required>
+<br>
+<br>
+<input type="submit" value="Register">
+<input type="reset" value="Reset" onclick="clearErrors()">
+</fieldset>
+</form>
+</center>
+<br>
+
+<script>
+function validateForm() {
+  let isValid = true;
+
+  
+  clearErrors();
+
+  
+  const nameInput = document.getElementById("name");
+  const plotidInput = document.getElementById("plotid");
+  const villageInput = document.getElementById("village");
+
+  const nameVal = nameInput.value.trim();
+  const plotidVal = plotidInput.value.trim();
+  const villageVal = villageInput.value.trim();
+
+  
+  nameInput.value = nameVal;
+  plotidInput.value = plotidVal;
+  villageInput.value = villageVal;
+
+  
+  const nameRegex = /^[A-Za-z\s]+$/;
+  if (nameVal === "") {
+    document.getElementById("nameError").innerText = "Farmer Name is required.";
+    isValid = false;
+  } else if (!nameRegex.test(nameVal)) {
+    document.getElementById("nameError").innerText = "Name must contain alphabetic characters and spaces only.";
+    isValid = false;
+  }
+
+  
+  if (plotidVal === "") {
+    document.getElementById("plotidError").innerText = "Plot ID is required.";
+    isValid = false;
+  }
+
+  
+  if (villageVal === "") {
+    document.getElementById("villageError").innerText = "Village is required.";
+    isValid = false;
+  }
+
+  return isValid;
+}
+
+function clearErrors() {
+  document.getElementById("nameError").innerText = "";
+  document.getElementById("plotidError").innerText = "";
+  document.getElementById("villageError").innerText = "";
+}
+</script>
+
+<footer>
+<hr>
+<p style="text-align: center">All copyrights are reserved by Tanb </p>
+</footer>
+</body>
+</html>
